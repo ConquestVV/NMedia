@@ -1,0 +1,60 @@
+Initialized native services in: /Users/vvolobuev/.gradle/native
+Initialized jansi services in: /Users/vvolobuev/.gradle/native
+The client will now receive all logging from the daemon (pid: 37841). The daemon log file: /Users/vvolobuev/.gradle/daemon/8.13/daemon-37841.out.log
+Starting 3rd build in daemon [uptime: 44 mins 17.858 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 2 GiB]
+Using 8 worker leases.
+Now considering [/Users/vvolobuev/AndroidStudioProjects/NMedia] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/Users/vvolobuev/AndroidStudioProjects/NMedia/settings.gradle.kts'.
+Projects loaded. Root project using build file '/Users/vvolobuev/AndroidStudioProjects/NMedia/build.gradle.kts'.
+Included projects: [root project 'NMedia', project ':app']
+
+> Configure project :
+Evaluating root project 'NMedia' using build file '/Users/vvolobuev/AndroidStudioProjects/NMedia/build.gradle.kts'.
+Resolved plugin [id: 'com.android.application', version: '8.7.2', apply: false]
+Resolved plugin [id: 'com.android.library', version: '8.7.2', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.android', version: '2.0.21', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.compose', version: '2.0.21', apply: false]
+
+> Configure project :app
+Evaluating project ':app' using build file '/Users/vvolobuev/AndroidStudioProjects/NMedia/app/build.gradle.kts'.
+Resolved plugin [id: 'com.android.application', version: '8.7.2']
+Resolved plugin [id: 'org.jetbrains.kotlin.android', version: '2.0.21']
+Resolved plugin [id: 'org.jetbrains.kotlin.plugin.compose', version: '2.0.21']
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+Detected Android Gradle Plugin compose compiler configuration
+All projects evaluated.
+Task path ':app:checkDebugDuplicateClasses' matched project ':app'
+Task name matched 'checkDebugDuplicateClasses'
+Selected primary task 'checkDebugDuplicateClasses' from project :app
+Tasks to be executed: [task ':app:preBuild', task ':app:preDebugBuild', task ':app:checkDebugDuplicateClasses']
+Tasks that were excluded: []
+Resolve mutations for :app:preBuild (Thread[#185,Execution worker,5,main]) started.
+:app:preBuild (Thread[#185,Execution worker,5,main]) started.
+
+> Task :app:preBuild UP-TO-DATE
+Skipping task ':app:preBuild' as it has no actions.
+Resolve mutations for :app:preDebugBuild (Thread[#185,Execution worker,5,main]) started.
+:app:preDebugBuild (Thread[#185,Execution worker,5,main]) started.
+
+> Task :app:preDebugBuild UP-TO-DATE
+Skipping task ':app:preDebugBuild' as it has no actions.
+Resolve mutations for :app:checkDebugDuplicateClasses (Thread[#185,Execution worker,5,main]) started.
+:app:checkDebugDuplicateClasses (Thread[#185,Execution worker,5,main]) started.
+
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+Caching disabled for task ':app:checkDebugDuplicateClasses' because:
+  Build cache is disabled
+  Caching has been disabled for the task
+Skipping task ':app:checkDebugDuplicateClasses' as it is up-to-date.
+
+BUILD SUCCESSFUL in 938ms
+1 actionable task: 1 up-to-date
+Watched directory hierarchies: [/Users/vvolobuev/AndroidStudioProjects/NMedia]
