@@ -65,3 +65,7 @@ configurations.configureEach {
     exclude(group = "androidx.compose.material", module = "material-icons-core")
     exclude(group = "androidx.compose.material", module = "material-icons-extended")
 }
+
+configurations.all {
+    exclude(group = "androidx.compose.material")
+}
