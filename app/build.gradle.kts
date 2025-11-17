@@ -58,3 +58,10 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
+
+configurations.configureEach {
+    exclude(group = "androidx.compose.material", module = "material")
+    exclude(group = "androidx.compose.material", module = "material-android")
+    exclude(group = "androidx.compose.material", module = "material-icons-core")
+    exclude(group = "androidx.compose.material", module = "material-icons-extended")
+}
