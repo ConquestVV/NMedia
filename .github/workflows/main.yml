@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,13 +37,25 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Clean & refresh deps
+        run: ./gradlew clean --refresh-dependencies
+
+      - name: Who pulls androidx.compose.material?
+        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency androidx.compose.material || true
+
       - name: Print Gradle/AGP versions
         run: |
           ./gradlew -v
           ./gradlew :app:dependencies --configuration releaseCompileClasspath || true
 
-      - name: Build Debug APK
+      - name: Build (verbose)
         run: ./gradlew assembleDebug --stacktrace --info
+
+      - name: Grep duplicate classes (if any)
+        if: failure()
+        run: |
+          echo "------ DUPLICATE CLASSES (context) ------"
+          ./gradlew :app:checkDebugDuplicateClasses --stacktrace --info || true
 
       - name: Upload APK
         if: success()
