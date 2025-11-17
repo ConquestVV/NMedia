@@ -32,41 +32,12 @@ jobs:
       - name: Install platforms & build-tools
         run: |
           sdkmanager "platforms;android-35" "build-tools;35.0.0" || true
-          sdkmanager "platforms;android-34" "build-tools;34.0.0" || true
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Clean & refresh deps
-        run: ./gradlew clean --refresh-dependencies
-
-      - name: Who pulls androidx.compose.material?
-        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency androidx.compose.material || true
-      
-      - name: Who pulls material(legacy)?
-        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency "androidx.compose.material:material" || true
-
-      - name: Who pulls material-android?
-        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency "androidx.compose.material:material-android" || true
-
-      - name: Who pulls Google Material?
-        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency "com.google.android.material:material" || true
-
-      - name: Show duplicate classes (full)
-        run: ./gradlew :app:checkDebugDuplicateClasses --stacktrace --info || true
-      - name: Print Gradle/AGP versions
-        run: |
-          ./gradlew -v
-          ./gradlew :app:dependencies --configuration releaseCompileClasspath || true
-
-      - name: Build (verbose)
-        run: ./gradlew assembleDebug --stacktrace --info
-
-      - name: Grep duplicate classes (if any)
-        if: failure()
-        run: |
-          echo "------ DUPLICATE CLASSES (context) ------"
-          ./gradlew :app:checkDebugDuplicateClasses --stacktrace --info || true
+      - name: Build Debug APK
+        run: ./gradlew clean assembleDebug --stacktrace --info
 
       - name: Upload APK
         if: success()
