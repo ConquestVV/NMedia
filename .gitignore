@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 reserve.md
 HELP.md
 .gradle
@@ -47,20 +46,3 @@ captures/
 
 ### Gradle ###
 !gradle/wrapper/gradle-wrapper.jar
-=======
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
->>>>>>> 49db7e5 (first app)
