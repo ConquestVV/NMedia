@@ -42,7 +42,18 @@ jobs:
 
       - name: Who pulls androidx.compose.material?
         run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency androidx.compose.material || true
+      
+      - name: Who pulls material(legacy)?
+        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency "androidx.compose.material:material" || true
 
+      - name: Who pulls material-android?
+        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency "androidx.compose.material:material-android" || true
+
+      - name: Who pulls Google Material?
+        run: ./gradlew :app:dependencyInsight --configuration debugRuntimeClasspath --dependency "com.google.android.material:material" || true
+
+      - name: Show duplicate classes (full)
+        run: ./gradlew :app:checkDebugDuplicateClasses --stacktrace --info || true
       - name: Print Gradle/AGP versions
         run: |
           ./gradlew -v
